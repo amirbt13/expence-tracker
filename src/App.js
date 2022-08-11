@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 //Components
 import Balance from './components/Balance';
 import History from './components/History';
@@ -7,14 +9,17 @@ import AddSection from './components/AddSection';
 import './App.css';
 
 function App() {
+
+  const [balance, setBalance] = useState([])
+
   return (
     <div className="App">
       
-      <Balance />
+      <Balance balance={balance}/>
 
-      <History />
+      <History balance={balance}/>
 
-      <AddSection />
+      <AddSection balance={balance} setBalance={setBalance}/>
 
     </div>
   );
