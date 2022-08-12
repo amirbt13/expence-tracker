@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 
-const AddSection = () => {
+const AddSection = ({balance, setBalance}) => {
 
    const [transition, setTransition] = useState({
       title: "",
-      amount: ""
+      amount: "",
+      isExpence: false
    })
 
    const changeHandler = (event) => {
@@ -12,10 +13,31 @@ const AddSection = () => {
       setTransition(prevTransition => {
          return {
             ...prevTransition,
-            [event.target.name] : event.target.value
+            [event.target.name] : event.target.value,
+            isExpence: parseInt(event.target.value) < 0 ? true : false
          }
       })
-      console.log(transition)
+      //console.log(transition)
+   }
+
+   const submitHandler = (event) => {
+      event.preventDefault()
+
+
+      setBalance(prevBalance => {
+         return [
+            ...prevBalance,
+            {...transition}
+         ]
+      })
+
+      setTransition({
+         title: "",
+         amount: "",
+         isExpence: false
+      })
+
+      console.log(balance)
    }
 
 
@@ -33,7 +55,7 @@ const AddSection = () => {
          <input type='number' name='amount' value={transition.amount} onChange={changeHandler}/>
         </div>
         
-         <input type='submit' />
+         <input type='submit' onClick={submitHandler}/>
 
       </form>
     </div>
