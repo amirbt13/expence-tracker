@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import uniqid from 'uniqid'
 
 const AddSection = ({balance, setBalance}) => {
 
@@ -27,7 +28,7 @@ const AddSection = ({balance, setBalance}) => {
       setBalance(prevBalance => {
          return [
             ...prevBalance,
-            {...transition}
+            {...transition, id:uniqid() }
          ]
       })
 
