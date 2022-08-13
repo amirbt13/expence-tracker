@@ -19,6 +19,7 @@ const Balance = ({ balance, totalBalance, setTotalBalance }) => {
   const totalIncomesAmount = incomes.reduce(getSum, 0)
   const totalExpencesAmount = expences.reduce(getSum, 0)
 
+
   return (
     <div>
       <h2>Total Balance: {totalBalance}</h2>
