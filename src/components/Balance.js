@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const Balance = ({ balance }) => {
+const Balance = ({ balance, totalBalance, setTotalBalance }) => {
 
+  // Defining total balance and incomes and expences
   const getSum = (total, amount) => {
     return total + +amount.amount
   }
 
-  const totalBalance = balance.reduce(getSum, 0)
+  useEffect(() => {
+    setTotalBalance(balance.reduce(getSum, 0))
+  }, [balance, setTotalBalance])
+
+  //const totalBalance = balance.reduce(getSum, 0)
 
   const incomes = balance.filter(transition => transition.isExpence === false)
   const expences = balance.filter(transition => transition.isExpence === true)

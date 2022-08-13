@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import uniqid from 'uniqid'
 
-const AddSection = ({balance, setBalance}) => {
+const AddSection = ({balance, setBalance, totalBalance}) => {
 
    const [transition, setTransition] = useState({
       title: "",
@@ -24,7 +24,7 @@ const AddSection = ({balance, setBalance}) => {
    const submitHandler = (event) => {
       event.preventDefault()
 
-
+      if(totalBalance + transition.amount >= 0){
       setBalance(prevBalance => {
          return [
             ...prevBalance,
@@ -37,7 +37,16 @@ const AddSection = ({balance, setBalance}) => {
          amount: "",
          isExpence: false
       })
+    } else {
+      
+      window.alert("Total Balance can not be negative")
 
+      setTransition({
+         ...transition,
+         amount: "",
+         isExpence: false
+      })
+    }
       console.log(balance)
    }
 
