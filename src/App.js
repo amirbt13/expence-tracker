@@ -15,13 +15,13 @@ function App() {
   const [totalBalance, setTotalBalance] = useState(0)
 
   return (
-    <div className="App">
+    <div className="app">
       
-      <Balance totalBalance={totalBalance} setTotalBalance={setTotalBalance} balance={balance}/>
+        <Balance totalBalance={totalBalance} setTotalBalance={setTotalBalance} balance={balance}/>
 
-      <History balance={balance}/>
+        <History balance={balance}/>
 
-      <AddSection totalBalance={totalBalance} balance={balance} setBalance={setBalance}/>
+        <AddSection totalBalance={totalBalance} balance={balance} setBalance={setBalance}/>
 
     </div>
   );

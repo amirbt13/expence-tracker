@@ -52,7 +52,7 @@ const AddSection = ({balance, setBalance, totalBalance}) => {
 
 
   return (
-    <div>
+    <div className='addSection'>
       <h2>Add a New Transition</h2>
       <form>
         <div> 
@@ -61,12 +61,13 @@ const AddSection = ({balance, setBalance, totalBalance}) => {
         </div>          
 
         <div> 
-         <label>Amount:</label>
+         <label>Amount:</label><small>(if it's an expence input a negative number)</small>
          <input type='number' name='amount' value={transition.amount} onChange={changeHandler}/>
         </div>
         
-         <input type='submit' onClick={submitHandler}/>
-
+        <div>
+         <input className='button' type='submit' onClick={submitHandler}/>
+        </div>
       </form>
     </div>
   )

@@ -21,11 +21,11 @@ const Balance = ({ balance, totalBalance, setTotalBalance }) => {
 
 
   return (
-    <div>
-      <h2>Total Balance: {totalBalance}</h2>
-      <div>
-         <h4>incomes:</h4><span>${totalIncomesAmount}</span>
-         <h4>expence:</h4><span>${totalExpencesAmount}</span>
+    <div className='balance'>
+      <h2>Total Balance: ${totalBalance}</h2>
+      <div className='balanceDetails'>
+         <div><h4>incomes:</h4><span>${totalIncomesAmount}</span></div>
+         <div><h4>expence:</h4><span>${totalExpencesAmount}</span></div>
       </div>
     </div>
   )
