@@ -19,7 +19,7 @@ function App() {
       
         <Balance totalBalance={totalBalance} setTotalBalance={setTotalBalance} balance={balance}/>
 
-        <History balance={balance}/>
+        <History balance={balance} setBalance={setBalance}/>
 
         <AddSection totalBalance={totalBalance} balance={balance} setBalance={setBalance}/>
 

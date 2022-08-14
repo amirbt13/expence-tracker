@@ -10,6 +10,10 @@ const Balance = ({ balance, totalBalance, setTotalBalance }) => {
   useEffect(() => {
     setTotalBalance(balance.reduce(getSum, 0))
   }, [balance, setTotalBalance])
+  
+  useEffect(() => {
+    if(totalBalance < 0){setTotalBalance(0)}
+  }, [totalBalance, setTotalBalance])
 
   //const totalBalance = balance.reduce(getSum, 0)
 

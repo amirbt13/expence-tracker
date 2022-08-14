@@ -24,7 +24,7 @@ const AddSection = ({balance, setBalance, totalBalance}) => {
    const submitHandler = (event) => {
       event.preventDefault()
 
-      if(totalBalance + transition.amount >= 0){
+      if(totalBalance + +transition.amount >= 0){
       setBalance(prevBalance => {
          return [
             ...prevBalance,
@@ -48,6 +48,7 @@ const AddSection = ({balance, setBalance, totalBalance}) => {
       })
     }
       console.log(balance)
+      console.log(totalBalance)
    }
 
 
